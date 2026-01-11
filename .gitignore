@@ -1,0 +1,6 @@
+.idea
+.next
+build
+node_modules.tar.gz
+node_modules
+.DS_Store

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+    scroll-behavior: smooth;
+    font-synthesis: none;
+    -moz-font-feature-settings: 'kern';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+    background: #f3f4f6;
+    /*background: #ffffff40;*/
+    /*background: #fafafa;*/
+    /*background: #f5f5f5f5;*/
+}
+.ql-editor  { font-size: initial; }
+
+.ql-tooltip.ql-editing[data-mode="video"] {
+    left: 0 !important;
+    top: 0 !important;
+}
