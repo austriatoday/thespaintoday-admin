@@ -5,7 +5,6 @@ import React, {useCallback, useEffect, useMemo, useState} from "react";
 import {ArticleList} from "@/app/articles/ArticleList";
 import {ArticleItem} from "@/app/articles/ArticleItem";
 import {CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
-import type {ValueType, NameType} from "recharts/types/component/DefaultTooltipContent";
 import {format} from "date-fns";
 
 interface Article {
@@ -47,10 +46,6 @@ export default function Views() {
             setArticles([]);
             setChartData([]);
         };
-    }, []);
-
-    const tooltipFormatter = useCallback((value: ValueType, name: NameType) => {
-        return [value, 'Просмотры'];
     }, []);
 
     const labelFormatter = useCallback((label: string) => {
@@ -97,7 +92,7 @@ export default function Views() {
                         />
                         <CartesianGrid stroke="#ccc"/>
                         <Tooltip
-                            formatter={tooltipFormatter}
+                            formatter={(value) => [value, 'Просмотры']}
                             labelFormatter={labelFormatter}
                         />
                         <XAxis dataKey="day" tickFormatter={tickFormatter}/>
