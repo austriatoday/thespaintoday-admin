@@ -4,8 +4,9 @@ import {ArticleList} from "@/app/articles/ArticleList";
 import {ArticleItem} from "@/app/articles/ArticleItem";
 
 export default async function CategoryPage({params}: any) {
-    const category = await getCategory(params.slug);
-    const articles = await getArticlesByCategory(params.slug)
+    const {slug} = await params;
+    const category = await getCategory(slug);
+    const articles = await getArticlesByCategory(slug)
 
     // const [articles, setArticles] = useState([]);
     // const [articlesCount, setArticlesCount] = useState();
